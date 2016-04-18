@@ -3,23 +3,25 @@
 # INSTALLING PYTHON
 mkdir ~/galaxy-python
 cd ~/galaxy-python
-wget http://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz
+wget http://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz
 mkdir install
-tar xvzf Python-2.7.9.tgz
-cd Python-2.7.9
+tar xvzf Python-2.7.11.tgz
+cd Python-2.7.11
 ./configure --prefix=/home/galaxy/galaxy-python/install
 make
 make install
 
-# INSTALLING PIP
-cd ~/galaxy-python
-wget "https://bootstrap.pypa.io/get-pip.py"
-python get-pip.py
+# SETTING ENVIRONMENTAL VARIABLES
+which python
+echo 'export PATH=$HOME/galaxy-python/install/bin:$PATH' >> ~/.bash_profile
+echo 'export PYTHONPATH=$HOME/galaxy-python/install/lib/python2.11/site-packages' >> ~/.bash_profile
+source .bash_profile
+which python
+python --version
 
-# INSTALLING MERCURIAL
-cd ~/
-hg clone https://bitbucket.org/galaxy/galaxy-dist/
-cd ~/galaxy-dist
-./run.sh --daemon
+# INSTALLING GALAXY
+git clone https://github.com/galaxyproject/galaxy/
+cd galaxy
+./run.sh
 tail -f paster.log
 
