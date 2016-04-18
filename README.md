@@ -2,4 +2,5 @@
 
 ## ワークフロー
 
-./workflows に置いてください。 
+* ./workflows に置いてあります。
+* 各ワークフローの詳細は [Wiki](http://wiki.pitagora-galaxy.org/wiki/index.php/Workflows) をご覧ください。
