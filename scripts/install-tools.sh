@@ -37,3 +37,4 @@ python ~/galaxy/scripts/api/install_tool_shed_repositories.py -a d04f1b61ec6da32
 python ~/galaxy/scripts/api/install_tool_shed_repositories.py -a d04f1b61ec6da32c6a05c24f177b6343 -l http://localhost:8080 -u https://toolshed.g2.bx.psu.edu/ -n distribution_of_dna_polymorphism -o takakoron -r 9aa9da228b8c --panel-section-name "DNAPod"
 python ~/galaxy/scripts/api/install_tool_shed_repositories.py -a d04f1b61ec6da32c6a05c24f177b6343 -l http://localhost:8080 -u https://toolshed.g2.bx.psu.edu/ -n snpeff_3_6c -o takakoron -r 216d02ec973a --panel-section-name "DNAPod"
 python ~/galaxy/scripts/api/install_tool_shed_repositories.py -a d04f1b61ec6da32c6a05c24f177b6343 -l http://localhost:8080 -u https://testtoolshed.g2.bx.psu.edu/ -n megap_pre -o emihat -r dfa3aa2e0e42 --panel-section-name "MeGAP"
+echo "Tool installation completed!"
