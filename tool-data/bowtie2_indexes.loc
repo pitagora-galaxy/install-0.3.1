@@ -39,4 +39,3 @@ hg19	hg19	hg19	/disk/reference/igenome/Homo_sapiens/UCSC/hg19/Sequence/Bowtie2In
 hg18	hg18	hg18	/disk/reference/igenome/Homo_sapiens/UCSC/hg18/Sequence/Bowtie2Index/genome
 mm10	mm10	mm10	/disk/reference/igenome/Mus_musculus/UCSC/mm10/Sequence/Bowtie2Index/genome
 mm9	mm9	mm9	/disk/reference/igenome/Mus_musculus/UCSC/mm9/Sequence/Bowtie2Index/genome
-dm3	dm3	dm3	/disk/reference/igenome/Drosophila_melanogaster/UCSC/dm3/Sequence/Bowtie2Index/genome
