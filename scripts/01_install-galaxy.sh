@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # INSTALLING OS PACKAGES
-sudo apt-get install sysv-rc-conf gcc make libsqlite3-dev libncurses5-dev zlib1g-dev libbz2-dev libssl-dev
-sudo apt-get install mysql-server libmysqlclient-dev
-sudo apt-get install vsftpd acpid
-sudo apt-get install default-jdk gfortran g++
+sudo apt-get install -y sysv-rc-conf gcc make libsqlite3-dev libncurses5-dev zlib1g-dev libbz2-dev libssl-dev
+sudo apt-get install -y mysql-server libmysqlclient-dev
+sudo apt-get install -y apache2 vsftpd acpid
+sudo apt-get install -y default-jdk gfortran g++
 
 # INSTALLING PYTHON
 mkdir ~/galaxy-python
@@ -21,7 +21,8 @@ make install
 which python
 echo 'export PATH=$HOME/galaxy-python/install/bin:$PATH' >> ~/.profile
 echo 'export PYTHONPATH=$HOME/galaxy-python/install/lib/python2.11/site-packages' >> ~/.profile
-source ~/.profile
+export PATH=$HOME/galaxy-python/install/bin:$PATH
+export PYTHONPATH=$HOME/galaxy-python/install/lib/python2.11/site-packages
 which python
 python --version
 
@@ -29,6 +30,4 @@ python --version
 cd
 git clone https://github.com/galaxyproject/galaxy/
 cd galaxy
-./run.sh --daemon
-tail -f paster.log
-
+./run.sh 
