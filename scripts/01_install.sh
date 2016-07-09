@@ -4,6 +4,8 @@
 sudo apt-get install -y sysv-rc-conf gcc make libsqlite3-dev libncurses5-dev zlib1g-dev libbz2-dev libssl-dev
 sudo apt-get install -y mysql-server libmysqlclient-dev
 sudo apt-get install -y apache2 vsftpd acpid
+sudo apt-get install -y linux-image-extra-$(uname -r)
+sudo apt-get install -y docker-engine
 sudo apt-get install -y default-jdk gfortran g++
 
 # INSTALLING PYTHON

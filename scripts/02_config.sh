@@ -1,4 +1,4 @@
-#/bin/sh
+#/bin/bash
 
 # CREATE GALAXY SERVICE
 sudo cp ./galaxy-init.sh /etc/init.d/galaxy
@@ -36,6 +36,8 @@ sudo service apache2 restart
 
 # MODIFY GALAXY CONFIG
 cp ../config/galaxy.ini ~/galaxy/config/
+export PATH=$HOME/galaxy-python/install/bin:$PATH
+export PYTHONPATH=$HOME/galaxy-python/install/lib/python2.11/site-packages
 sudo service galaxy start
 
 # START SERVICES
