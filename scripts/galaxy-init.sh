@@ -2,8 +2,8 @@
 # chkconfig: 2345 99 99
 # description: autorun galaxy
 
-user=galaxy
-galaxy_run=/home/galaxy/galaxy/run.sh
+user=ubuntu
+galaxy_run=/home/ubuntu/galaxy/run.sh
 
 do_start(){
   su - $user -c "$galaxy_run --daemon"
