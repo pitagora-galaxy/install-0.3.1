@@ -7,7 +7,7 @@ sudo apt-get install -y apache2 vsftpd acpid
 sudo apt-get install -y linux-image-extra-$(uname -r)
 echo 'deb https://apt.dockerproject.org/repo ubuntu-trusty main' | sudo tee -a /etc/apt/sources.list.d/docker.list
 sudo apt-get update
-sudo apt-get install -y docker-engine
+sudo apt-get install -y --force-yes docker-engine
 sudo apt-get install -y default-jdk gfortran g++
 
 # INSTALLING PYTHON
