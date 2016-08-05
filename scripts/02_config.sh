@@ -10,12 +10,20 @@ mysql -u root -pgalaxy < create.sql
 echo 'exit' | mysql -u galaxy -pgalaxy -D galaxy
 
 # ADD DISKS
-sudo mkfs -t ext4 /dev/xvdb
-sudo mkfs -t ext4 /dev/xvdc
 sudo mkdir -p /disk/reference
 sudo mkdir -p /disk/database
-echo '/dev/xvdb /disk/reference ext4 defaults 0 0' | sudo tee -a /etc/fstab
-echo '/dev/xvdc /disk/database  ext4 defaults 0 0' | sudo tee -a /etc/fstab
+if [-e "/dev/xvdb"]
+then
+  sudo mkfs -t ext4 /dev/xvdb
+  sudo mkfs -t ext4 /dev/xvdc
+  echo '/dev/xvdb /disk/reference ext4 defaults 0 0' | sudo tee -a /etc/fstab
+  echo '/dev/xvdc /disk/database  ext4 defaults 0 0' | sudo tee -a /etc/fstab
+else
+  sudo mkfs -t ext4 /dev/sdb
+  sudo mkfs -t ext4 /dev/sdc
+  echo '/dev/sdb /disk/reference ext4 defaults 0 0' | sudo tee -a /etc/fstab
+  echo '/dev/sdc /disk/database  ext4 defaults 0 0' | sudo tee -a /etc/fstab
+fi
 sudo mount -a
 sudo chown ubuntu:ubuntu /disk/reference
 sudo chown ubuntu:ubuntu /disk/database
